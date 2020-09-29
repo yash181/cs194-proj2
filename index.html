@@ -32,27 +32,17 @@
     <h3 align="middle">CS 294-26 • Fall 2020 • Project 2</h3>
     <h3 align="middle">Yash Agarwal</h3>
 
-
-    </br></br></br>
-<!--     <h2 align="middle">Overview</h2>
-        In this assignment, I create several filters and effects by utilizing and modifying the frequency distribution of these images! -->
-
-      In this part we play around with several types of filters and 2D Convolutions.
-
-    </br></br></br>
     <h2 align="middle">Part 1</h2>
 
-    </br>
     <h3 align="middle">Part 1.1: Finite Difference Operator</h3>
 
     Here, we can see the partial derivatives in x and y of the cameraman images. The partial derivatives give us a rate of change along the respective axes and thus, also behave like a pseduo edge detector. 
 
-    <br>
 
 
     I compute the gradient magnitude image by first convolving the image with D_x = [1,-1] and D_y = [1, -1].T filters and then taking their magnitude using np.sqrt(Dx**2 + Dy**2). 
 
-    <br>
+    <br><br>
     Finally, to improve the quality of the image I threshold the image using a value of 0.16.
 
   </br></br>
@@ -92,11 +82,11 @@
 
     To improve the quality of the gradient magnitude image, it helps to blur the image and calculate the gradients. This can be done in the following two ways.
 
-    <br>
+    <br><br>
 
     Method 1: I first blur the original image using a Gaussian filter, and then calculate the respective Dx and Dy gradients. Finally, I calculate the gradient magnitude image using the l2-norm formula.
     
-    <br>
+    <br><br>
 
     Below you can see the blurred image and the final output. 
 
@@ -121,7 +111,7 @@
 
     I observed that both methods yeild the same results, displaying the commutativity and associativity of the convolution operation.
 
-    </br>
+    <br><br>
     <div align="middle">
       <table style="width=100%">
           <tr>
@@ -232,11 +222,14 @@
     </table>
   </div>
 
-  <h4 align="middle">Failure Case: Leaning Tower of Pisa</h4>
+  <h4 align="middle">Failure Case - Abstract Art </h4>
   </br>
    
 
    The next image is a failed case. I think it doesn't work because there are no distinct vertical and horizontal edges to begin with in the image. The algorithm gets confused as to what even straight means for the below image.
+
+   <br>
+   <br>
 </br>
 
   <div align="middle">
@@ -264,13 +257,13 @@
     </table>
   </div>
 
-    </br></br></br>
-    <h2 align="middle"> Part 2</h2>
     </br>
+    <h2 align="middle"> Part 2</h2>
     <h3 align="middle"> Part 2.1: Image "Sharpening"</h3>
 
     For sharpening the image, we need to first blur it (Ikr!) This gives us the low frequencies in the image. We then subtract these from the orginal images to get the high freqeuncies (kind of gives us the edges). We then finally add the high frequencies to the original image ad get a "sharpened" image.
 
+<br> <br>
     Below you can see two examples of the Taj Mahal and the San Francisco skyline.
 
   </br></br>
@@ -423,6 +416,8 @@ For my favorite result of Mark Walhberg and Matt Damon, I have also included the
         </td>
       </tr>
   </table>
+
+  <br><br>
 
   Here's a failure case where I tried to get a mannequin to wear a t-shirt but it didn't work. I think because of the high brightness of one image and the extremely low brightness of the other image, this failed.
 
